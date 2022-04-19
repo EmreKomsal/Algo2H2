@@ -2,12 +2,15 @@
 #include <list>
 
 using namespace std;
-
+class Color{
+public:
+    int color_id;
+};
 class Node{
 private:
     int node_num;
     list<Node*> adjacent_nodes;
-    int color_value;
+    Color* color_value;
 public:
     Node(int num){
         node_num = num;
@@ -17,15 +20,15 @@ public:
         adjacent_nodes.push_back(adjacent);
     }
 
-    void Set_Colour(int color){
+    void Set_Colour(Color* color){
         color_value = color;
     }
 
-    int Get_Colour(){
+    Color* Get_Colour(){
         return color_value;
     }
 
-    void Check_Adjacent_Colour(int color){
+    void Check_Adjacent_Colour(Color* color){
         //for each ile listeyi kontrol et
     }
 };
