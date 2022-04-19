@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+#include <vector>
 
 using namespace std;
 class Color{
@@ -9,7 +9,7 @@ public:
 class Node{
 private:
     int node_num;
-    list<Node*> adjacent_nodes;
+    vector<Node*> adjacent_nodes;
     Color* color_value;
 public:
     Node(int num){
@@ -18,6 +18,17 @@ public:
 
     void Set_Adjacent(Node* adjacent){
         adjacent_nodes.push_back(adjacent);
+    }
+
+    void Print_Adjacent(){
+        cout << endl;
+        for (int i = 0; i < adjacent_nodes.size(); i++) {
+            adjacent_nodes[i]->Print_Node();
+        }
+    }
+
+    void Print_Node(){
+        cout << node_num << ", " << color_value << endl;
     }
 
     void Set_Colour(Color* color){
@@ -34,5 +45,14 @@ public:
 };
 
 int main() {
+    Node node1(1);
+    Node node2(2);
+    Node node3(3);
+    Node node4(4);
 
+    node1.Set_Adjacent(&node2);
+    node1.Set_Adjacent(&node3);
+    node1.Set_Adjacent(&node4);
+
+    node1.Print_Adjacent();
 }
