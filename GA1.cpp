@@ -90,6 +90,7 @@ int main() {
 
     node3.Set_Adjacent(&node2);
     node3.Set_Adjacent(&node4);
+    node3.Set_Adjacent(&node6);
     node3.Set_Adjacent(&node7);
 
     node4.Set_Adjacent(&node1);
